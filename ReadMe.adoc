@@ -1,7 +1,7 @@
 :Author: Jason R. Carrete
 :Email: jasoncarrete5@gmail.com
 :Date: 01/22/2018
-:Revision: 0
+:Revision: 1
 :License: MIT
 
 = Project: Simon Says
@@ -24,16 +24,6 @@ Assemble the circuit following the diagram layout.png attached to the sketch
 == Step 3: Load the code
 
 Upload the code contained in this sketch on to your board
-
-=== Folder structure
-
-....
- sketch123                => Arduino sketch folder
-  ├── sketch123.ino       => main Arduino file
-  ├── schematics.png      => (optional) an image of the required schematics
-  ├── layout.png          => (optional) an image of the layout
-  └── ReadMe.adoc         => this file
-....
 
 === License
 This project is released under a {License} License.
