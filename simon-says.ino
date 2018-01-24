@@ -81,6 +81,7 @@ void showPattern() {
       	green();
       	break;
     }
+    delay(300);
   }
 }
 
@@ -140,6 +141,7 @@ void loop() {
   showPattern();
   bool correct = checkInput();
   if (!correct) {
+  	delay(300);
     buzz(fail);
     buzz(fail);
     buzz(fail);
