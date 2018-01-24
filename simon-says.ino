@@ -66,7 +66,7 @@ void nextColor() {
 }
 
 void showPattern() {
-  for (int i = 0; i < seqIndex; i++) {
+  for (unsigned int i = 0; i < seqIndex; i++) {
     switch (sequence[i]) {
       case RED:
       	red();
@@ -86,7 +86,7 @@ void showPattern() {
 }
 
 bool checkInput() {
-  for (int i = 0; i < seqIndex;) {
+  for (unsigned int i = 0; i < seqIndex;) {
     unsigned char answer = sequence[i];
     if (digitalRead(RED_BTN) == LOW && digitalRead(YELLOW_BTN) != LOW &&
         digitalRead(BLUE_BTN) != LOW && digitalRead(GREEN_BTN) != LOW) {
