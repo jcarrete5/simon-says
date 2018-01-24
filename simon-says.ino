@@ -1,5 +1,5 @@
+#include <WiFi101.h>
 #include <EEPROM.h>
-#include <math.h>
 
 enum Sound {
   fail = 128,
@@ -84,7 +84,7 @@ void showPattern() {
       	green();
       	break;
     }
-    delay(300);
+    delay(200);
   }
 }
 
@@ -115,6 +115,7 @@ bool checkInput() {
       if (answer != GREEN) return false;
       i++;
     }
+    delay(10);
   }
   return true;
 }
@@ -137,7 +138,7 @@ void setup() {
   
   randomSeed(analogRead(A5) * EEPROM[0]);
   nextColor();
-  delay(3000);
+  delay(2000);
 }
 
 void loop() {
