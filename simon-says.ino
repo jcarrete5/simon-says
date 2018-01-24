@@ -1,3 +1,4 @@
+#include <EEPROM.h>
 #include <math.h>
 
 enum Sound {
@@ -62,7 +63,9 @@ void yellow() {
 }
 
 void nextColor() {
-  sequence[seqIndex++] = floor(random(1, 5));
+	byte randNum = floor(random(1, 5));
+  sequence[seqIndex++] = randNum;
+  EEPROM[0] = randNum;
 }
 
 void showPattern() {
@@ -132,7 +135,7 @@ void setup() {
   pinMode(RED_BTN, INPUT_PULLUP);
   pinMode(YELLOW_BTN, INPUT_PULLUP);
   
-  randomSeed(analogRead(A5));
+  randomSeed(analogRead(A5) * EEPROM[0]);
   nextColor();
   delay(3000);
 }
