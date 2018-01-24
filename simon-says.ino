@@ -9,10 +9,10 @@ enum Sound {
 };
 
 // Colors
-const unsigned char RED = 1;
-const unsigned char YELLOW = 2;
-const unsigned char BLUE = 3;
-const unsigned char GREEN = 4;
+const byte RED = 1;
+const byte YELLOW = 2;
+const byte BLUE = 3;
+const byte GREEN = 4;
 
 // Pins
 const unsigned int BUZZER = 5;
@@ -28,7 +28,7 @@ const unsigned int YELLOW_BTN = A1;
 const unsigned long BUZZ_DUR = 250; // ms
 
 const unsigned int MAX_SEQ_LENGTH = 256;
-unsigned char sequence[MAX_SEQ_LENGTH];
+byte sequence[MAX_SEQ_LENGTH];
 unsigned int seqIndex = 0;
 
 void buzz(unsigned int frq) {
@@ -87,7 +87,7 @@ void showPattern() {
 
 bool checkInput() {
   for (unsigned int i = 0; i < seqIndex;) {
-    unsigned char answer = sequence[i];
+    byte answer = sequence[i];
     if (digitalRead(RED_BTN) == LOW && digitalRead(YELLOW_BTN) != LOW &&
         digitalRead(BLUE_BTN) != LOW && digitalRead(GREEN_BTN) != LOW) {
       red();
