@@ -84,7 +84,7 @@ void showPattern() {
       	green();
       	break;
     }
-    delay(200);
+    delay(150);
   }
 }
 
@@ -119,7 +119,6 @@ bool checkInput() {
       i++;
       continue;
     }
-    //delay(10);
   }
   return true;
 }
@@ -142,7 +141,7 @@ void setup() {
   
   randomSeed(analogRead(A5) * EEPROM[0]);
   nextColor();
-  delay(2000);
+  delay(1000);
 }
 
 void loop() {
@@ -154,7 +153,7 @@ void loop() {
     buzz(fail);
     buzz(fail);
     seqIndex = 0;
-    delay(2000);
+    delay(1000);
   }
   nextColor();
   delay(500);
