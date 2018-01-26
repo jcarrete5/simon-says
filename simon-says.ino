@@ -26,7 +26,7 @@ const unsigned int BLUE_BTN = A2;
 const unsigned int RED_BTN = A0;
 const unsigned int YELLOW_BTN = A1;
 
-const unsigned long BUZZ_DUR = 250; // ms
+const unsigned long BUZZ_DUR = 200; // ms
 
 const unsigned int MAX_SEQ_LENGTH = 256;
 byte sequence[MAX_SEQ_LENGTH];
@@ -35,7 +35,7 @@ unsigned int seqIndex = 0;
 void buzz(unsigned int frq) {
   tone(BUZZER, frq, BUZZ_DUR);
   delay(BUZZ_DUR);
-  delay(100);
+  delay(50);
 }
 
 void green() {
