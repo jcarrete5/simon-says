@@ -96,26 +96,30 @@ bool checkInput() {
       red();
       if (answer != RED) return false;
       i++;
+      continue;
     }
     if (digitalRead(RED_BTN) != LOW && digitalRead(YELLOW_BTN) == LOW &&
         digitalRead(BLUE_BTN) != LOW && digitalRead(GREEN_BTN) != LOW) {
       yellow();
       if (answer != YELLOW) return false;
       i++;
+      continue;
     }
     if (digitalRead(RED_BTN) != LOW && digitalRead(YELLOW_BTN) != LOW &&
         digitalRead(BLUE_BTN) == LOW && digitalRead(GREEN_BTN) != LOW) {
       blue();
       if (answer != BLUE) return false;
       i++;
+      continue;
     }
     if (digitalRead(RED_BTN) != LOW && digitalRead(YELLOW_BTN) != LOW &&
         digitalRead(BLUE_BTN) != LOW && digitalRead(GREEN_BTN) == LOW) {
       green();
       if (answer != GREEN) return false;
       i++;
+      continue;
     }
-    delay(10);
+    //delay(10);
   }
   return true;
 }
