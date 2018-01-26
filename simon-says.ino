@@ -63,8 +63,9 @@ void yellow() {
 }
 
 void nextColor() {
-	byte randNum = floor(random(1, 5));
+	byte randNum = random(1, 5);
   sequence[seqIndex++] = randNum;
+  randNum = randNum ^ random(1, 255);
   EEPROM[0] = randNum;
 }
 
@@ -139,12 +140,15 @@ void setup() {
   pinMode(RED_BTN, INPUT_PULLUP);
   pinMode(YELLOW_BTN, INPUT_PULLUP);
   
-  randomSeed(analogRead(A5) * EEPROM[0]);
+  randomSeed(analogRead(A5) ^ EEPROM[0]);
   nextColor();
   delay(1000);
 }
 
 void loop() {
+	#ifndef NDEBUG
+	Serial.println(EEPROM[0]);
+	#endif
   showPattern();
   bool correct = checkInput();
   if (!correct) {
